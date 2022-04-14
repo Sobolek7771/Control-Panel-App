@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/control_panel_navigation"
+    app:startDestination="@id/missionListControlPanelFragment">
+    <fragment
+        android:id="@+id/missionListControlPanelFragment"
+        android:name="com.example.controlpanel.viewpager.fragment.ControlPanel.MissionList.MissionListControlPanelFragment"
+        android:label="fragment_mission_list_control_panel"
+        tools:layout="@layout/fragment_mission_list_control_panel" >
+        <action
+            android:id="@+id/action_missionListControlPanelFragment_to_choosingMissionToCreateFragment"
+            app:destination="@id/choosingMissionToCreateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/choosingMissionToCreateFragment"
+        android:name="com.example.controlpanel.viewpager.fragment.ControlPanel.ChoosingMissionToCreate.ChoosingMissionToCreateFragment"
+        android:label="fragment_choosing_mission_to_create"
+        tools:layout="@layout/fragment_choosing_mission_to_create" >
+        <action
+            android:id="@+id/action_choosingMissionToCreateFragment_to_createMobileTowerFragment"
+            app:destination="@id/createMobileTowerFragment" />
+        <action
+            android:id="@+id/action_choosingMissionToCreateFragment_to_createArealShootingFragment"
+            app:destination="@id/createArealShootingFragment" />
+        <action
+            android:id="@+id/action_choosingMissionToCreateFragment_to_missionListControlPanelFragment"
+            app:destination="@id/missionListControlPanelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createMobileTowerFragment"
+        android:name="com.example.controlpanel.viewpager.fragment.ControlPanel.CreateMobileTower.CreateMobileTowerFragment"
+        android:label="fragment_create_mobile_tower"
+        tools:layout="@layout/fragment_create_mobile_tower" >
+        <action
+            android:id="@+id/action_createMobileTowerFragment_to_choosingMissionToCreateFragment"
+            app:destination="@id/choosingMissionToCreateFragment" />
+        <action
+            android:id="@+id/action_createMobileTowerFragment_to_missionListControlPanelFragment"
+            app:destination="@id/missionListControlPanelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createArealShootingFragment"
+        android:name="com.example.controlpanel.viewpager.fragment.ControlPanel.CreateArealShooting.CreateArealShootingFragment"
+        android:label="fragment_create_areal_shooting"
+        tools:layout="@layout/fragment_create_areal_shooting" >
+        <action
+            android:id="@+id/action_createArealShootingFragment_to_choosingMissionToCreateFragment"
+            app:destination="@id/choosingMissionToCreateFragment" />
+        <action
+            android:id="@+id/action_createArealShootingFragment_to_missionListControlPanelFragment"
+            app:destination="@id/missionListControlPanelFragment" />
+    </fragment>
+</navigation>
