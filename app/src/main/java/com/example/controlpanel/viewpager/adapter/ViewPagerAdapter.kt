@@ -6,8 +6,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import java.util.ArrayList
 
-//Отрисовка фрагментов
-
 class ViewPagerAdapter(
     list: ArrayList<Fragment>,
     fm: FragmentManager,

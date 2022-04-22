@@ -24,7 +24,7 @@ class ViewPagerFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentViewPagerBinding.inflate(inflater, container, false)
 
-        val fragmentList = arrayListOf<Fragment>(
+        val fragmentList = arrayListOf(
             MainPageFragment(),
             ControlPanelFragment(),
         )

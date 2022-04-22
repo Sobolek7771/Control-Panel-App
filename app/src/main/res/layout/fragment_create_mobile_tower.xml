@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/dark_blue"
-    tools:context=".viewpager.fragment.ControlPanel.CreateMobileTower.CreateMobileTowerFragment">
+    tools:context=".viewpager.fragment.ControlPanel.ChoosingMissionToCreate.CreateMobileTower.CreateMobileTowerFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,7 +26,7 @@
                 android:id="@+id/backButton"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:background="@color/dark_blue"
+                android:background="@drawable/dark_blue_button_background"
                 android:src="@drawable/ic_arrow_back"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,20 +120,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsTextView" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/radius"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsDivider">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/radius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsDivider">
 
             <ImageView
                 android:id="@+id/radiusImageView"
@@ -143,7 +139,7 @@
                 android:paddingEnd="8dp"
                 android:src="@drawable/ic_radius"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/radiusTextView"
@@ -153,9 +149,9 @@
                 android:text="Радиус"
                 android:textColor="@color/blue"
                 android:textSize="12dp"
+                app:layout_constraintBottom_toTopOf="@+id/radiusEditText"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/radiusImageView"
-                app:layout_constraintBottom_toTopOf="@+id/radiusEditText" />
+                app:layout_constraintStart_toEndOf="@+id/radiusImageView" />
 
             <EditText
                 android:id="@+id/radiusEditText"
@@ -171,24 +167,16 @@
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/shootingPointsNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/specialMissionSettingsDivider">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/shootingPointsNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialMissionSettingsDivider">
 
             <ImageView
                 android:id="@+id/shootingPointsNumberImageView"
@@ -226,23 +214,16 @@
                 tools:ignore="SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/radius">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radius">
 
             <ImageView
                 android:id="@+id/heightImageView"
@@ -281,22 +262,15 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/tiltAngle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="18dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/shootingPointsNumber">
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/tiltAngle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="18dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintStart_toStartOf="@+id/shootingPointsNumber"
+            app:layout_constraintTop_toBottomOf="@id/shootingPointsNumber">
 
             <ImageView
                 android:id="@+id/tiltAngleImageView"
@@ -334,7 +308,6 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
 
 
@@ -362,23 +335,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generalMissionSettingsTextView" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/rounded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/speed">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/rounding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintStart_toStartOf="@id/tiltAngle"
+            app:layout_constraintBottom_toBottomOf="@+id/speed">
 
             <ImageView
-                android:id="@+id/roundedImageView"
+                android:id="@+id/roundingImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/dark_blue"
@@ -388,7 +356,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/roundedTextView"
+                android:id="@+id/roundingTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/dark_blue"
@@ -396,11 +364,11 @@
                 android:textColor="@color/blue"
                 android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
-                app:layout_constraintBottom_toTopOf="@+id/roundedEditText" />
+                app:layout_constraintStart_toEndOf="@+id/roundingImageView"
+                app:layout_constraintBottom_toTopOf="@+id/roundingEditText" />
 
             <EditText
-                android:id="@+id/roundedEditText"
+                android:id="@+id/roundingEditText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/parameter_input"
@@ -409,26 +377,20 @@
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/roundedImageView"
+                app:layout_constraintStart_toEndOf="@+id/roundingImageView"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@color/dark_blue"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/generalMissionSettingsDivider">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/dark_blue">
+            android:id="@+id/speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/dark_blue"
+            app:layout_constraintStart_toStartOf="@+id/height"
+            app:layout_constraintTop_toBottomOf="@+id/generalMissionSettingsDivider">
 
             <ImageView
                 android:id="@+id/speedImageView"
@@ -466,7 +428,6 @@
                 app:layout_constraintStart_toEndOf="@+id/speedImageView"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/yesNoMenu"
@@ -485,15 +446,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Сохранить"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:drawableLeft="@drawable/ic_done"
-                android:background="?android:selectableItemBackground"/>
+                android:background="@drawable/light_blue_button_background"
+                android:layout_marginEnd="8dp"
+                android:stateListAnimator="@null"/>
             <Button
                 android:id="@+id/closeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Отмена"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
                 android:drawableLeft="@drawable/ic_close"
-                android:background="?android:selectableItemBackground"/>
+                android:background="@drawable/light_blue_button_background"
+                android:layout_marginStart="8dp"
+                android:stateListAnimator="@null"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

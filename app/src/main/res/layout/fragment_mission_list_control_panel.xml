@@ -5,164 +5,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".viewpager.fragment.ControlPanel.MissionList.MissionListControlPanelFragment"
+    tools:context=".viewpager.fragment.ControlPanel.MissionList.MissionListFragment"
     android:background="@color/dark_blue">
 
-    <RadioGroup
-        android:id="@+id/statusBar"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/radio_selector"
-            android:button="@android:color/transparent"
-            android:padding="16dp"
-            android:text="Слои"
-            android:textColor="@drawable/text_color"
-            android:textSize="18dp"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Подложки"
-            android:textColor="@drawable/text_color"
-            android:button="@android:color/transparent"
-            android:background="@drawable/radio_selector"
-            android:textSize="18dp"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Миссии"
-            android:textColor="@drawable/text_color"
-            android:button="@android:color/transparent"
-            android:background="@drawable/radio_selector"
-            android:textSize="18dp"/>
-    </RadioGroup>
-
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statusBar" />
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/submenu"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:cardBackgroundColor="@color/light_blue">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RadioGroup
+            android:id="@+id/statusBar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp">
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:padding="16dp"
+                android:text="Слои"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:padding="16dp"
+                android:text="Подложки"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/radio_selector"
+                android:button="@android:color/transparent"
+                android:padding="16dp"
+                android:text="Миссии"
+                android:textColor="@drawable/text_color"
+                android:textSize="18dp" />
+        </RadioGroup>
 
 
-            <ImageButton
-                android:id="@+id/addMissionButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/submenu_selector"
-                android:src="@drawable/ic_add"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/statusBar" />
 
-            <ImageButton
-                android:id="@+id/searchButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/submenu_selector"
-                android:src="@drawable/ic_search"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/addMissionButton"
-                app:layout_constraintTop_toTopOf="parent" />
-            <ImageButton
-                android:id="@+id/deleteButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/submenu_selector"
-                android:src="@drawable/ic_delete"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@id/searchButton"
-                app:layout_constraintTop_toTopOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/submenu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            app:cardBackgroundColor="@color/light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
 
-            <Switch
-                android:id="@+id/switch1"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp">
 
-            <ImageButton
-                android:id="@+id/filterListButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/submenu_selector"
-                android:src="@drawable/ic_filter_list"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/switch1"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageButton
-                android:id="@+id/visibleButton"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/submenu_selector"
-                android:src="@drawable/ic_visible"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/filterListButton"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:id="@+id/addMissionButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/light_blue_button_background"
+                    android:src="@drawable/ic_add"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@color/light_blue"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/addMissionButton" />
 
-    <EditText
-        android:id="@+id/searchEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/search_bar"
-        android:drawableEnd="@drawable/ic_search"
-        android:hint="Введите название миссии"
-        android:inputType="textPersonName"
-        android:padding="8dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/grey"
-        android:textSize="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submenu" />
+                <ImageButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/light_blue_button_background"
+                    android:src="@drawable/ic_delete"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/searchButton" />
 
-    <!--<androidx.recyclerview.widget.RecyclerView
+                <Switch
+                    android:id="@+id/switch1"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ImageButton
+                    android:id="@+id/filterListButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/light_blue_button_background"
+                    android:src="@drawable/ic_filter_list"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/switch1" />
+
+                <ImageButton
+                    android:id="@+id/visibleButton"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/light_blue_button_background"
+                    android:src="@drawable/ic_visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/filterListButton" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/search_bar"
+            android:drawableEnd="@drawable/ic_search"
+            android:hint="Введите название миссии"
+            android:inputType="textPersonName"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="14dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/submenu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchEditText" />-->
+        app:layout_constraintTop_toBottomOf="@+id/menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

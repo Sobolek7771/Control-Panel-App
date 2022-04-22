@@ -4,31 +4,20 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.controlpanel.data.dao.ArealShooting.ArealShootingDao
-import com.example.controlpanel.data.dao.FreeFlight.FreeFlightDao
-import com.example.controlpanel.data.dao.MissionTypeDao
-import com.example.controlpanel.data.dao.MobileTower.MobileTowerDao
-import com.example.controlpanel.data.model.ArealShooting.ArealShooting
-import com.example.controlpanel.data.model.FreeFlight.FreeFlight
-import com.example.controlpanel.data.model.FreeFlight.Waypoint.Waypoint
-import com.example.controlpanel.data.model.MissionType
-import com.example.controlpanel.data.model.MobileTower.MobileTower
+import com.example.controlpanel.data.dao.ArealShootingDao
+import com.example.controlpanel.data.dao.MobileTowerDao
+import com.example.controlpanel.data.model.typeMission.ArealShooting.ArealShooting
+import com.example.controlpanel.data.model.typeMission.MobileTower.MobileTower
 
 
 @Database(entities = [
-    MissionType::class,
     ArealShooting::class,
-    FreeFlight::class,
-    MobileTower::class,
-    Waypoint::class],
-    version = 1, exportSchema = false)
+    MobileTower::class],
+    version = 2, exportSchema = false)
 abstract class MissionDatabase: RoomDatabase() {
 
-    abstract fun MissionTypeDao(): MissionTypeDao
-        abstract fun ArealShootingDao(): ArealShootingDao
-        abstract fun MobileTowerDao(): MobileTowerDao
-        abstract fun FreeFlightDao(): FreeFlightDao
-
+    abstract fun ArealShootingDao(): ArealShootingDao
+    abstract fun MobileTowerDao(): MobileTowerDao
 
     companion object{
         @Volatile
