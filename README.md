@@ -38,4 +38,5 @@
 
 Сделано за 16 дней.
 
-![ЦИТ Тестовое задание Android 4](https://user-images.githubusercontent.com/83010842/166403003-9e5bb24d-42fe-46ca-81c3-1760010f6676.png)
+![ЦИТ Тестовое задание](https://user-images.githubusercontent.com/83010842/166404637-dfcaf2a5-a596-4f6c-9383-7bc34b3dd66e.png
+
