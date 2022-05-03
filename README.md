@@ -38,5 +38,4 @@
 
 Сделано за 16 дней.
 
-![ЦИТ Тестовое задание](https://user-images.githubusercontent.com/83010842/166404637-dfcaf2a5-a596-4f6c-9383-7bc34b3dd66e.png
-
+![ЦИТ Тестовое задание](https://user-images.githubusercontent.com/83010842/166404663-7158cad8-447d-41e0-b760-75a22b05cb8f.png)
