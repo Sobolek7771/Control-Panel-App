@@ -6,7 +6,10 @@ import com.example.controlpanel.data.model.typeMission.ArealShooting.ArealShooti
 
 class ArealShootingRepository(private val arealShootingDao: ArealShootingDao) {
 
-    val readAllData: LiveData<List<ArealShooting>> = arealShootingDao.readAllData()
+    val readAllLocalData: LiveData<List<ArealShooting>> = arealShootingDao.readAllLocalData()
+    val countAllLocalData: LiveData<Int> = arealShootingDao.countAllLocalData()
+    val readAllServerData: LiveData<List<ArealShooting>> = arealShootingDao.readAllServerData()
+    val countAllServerData: LiveData<Int> = arealShootingDao.countAllServerData()
 
     suspend fun addArealShooting(arealShooting: ArealShooting){
         arealShootingDao.addArealShooting(arealShooting)

@@ -24,7 +24,7 @@ class CreateArealShootingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentCreateArealShootingBinding.inflate(inflater, container, false)
 
@@ -59,6 +59,7 @@ class CreateArealShootingFragment : Fragment() {
             //Create ArealShooting
             val arealShooting = ArealShooting(0,
                 "ArealShooting",
+                true,
                 Integer.parseInt(speed.toString()),
                 Integer.parseInt(rounding.toString()),
                 Integer.parseInt(resolution.toString()),

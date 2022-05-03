@@ -70,6 +70,7 @@ class UpdateMobileTowerFragment : Fragment() {
 
             val updateMobileTower = MobileTower(args.currentMobileTower.id,
                 "MobileTower",
+                args.currentMobileTower.isLocal,
                 Integer.parseInt(speed.toString()),
                 Integer.parseInt(rounding.toString()),
                 Integer.parseInt(radius.toString()),

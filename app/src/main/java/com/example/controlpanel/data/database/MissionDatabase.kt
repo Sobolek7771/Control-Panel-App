@@ -33,7 +33,7 @@ abstract class MissionDatabase: RoomDatabase() {
                     context.applicationContext,
                     MissionDatabase::class.java,
                     "mission_database"
-                ).build()
+                ).createFromAsset("database/mission_database.db").build()
                 INSTANCE = instance
                 return instance
             }

@@ -12,6 +12,7 @@ data class MobileTower(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val missionType: String,
+    val isLocal: Boolean,
     val speed: Int,
     val rounding: Int,
     //special settings

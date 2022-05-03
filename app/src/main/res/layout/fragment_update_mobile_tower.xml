@@ -16,7 +16,15 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -61,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:padding="8dp"
+        android:layout_marginTop="16dp"
         android:text="Мобильная вышка"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -72,7 +80,8 @@
         android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/ic_mobile_tower"
         app:layout_constraintStart_toEndOf="@+id/helpTextView"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -102,7 +111,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:padding="8dp"
         android:text="Настройки миссии"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -128,7 +136,7 @@
         android:background="@color/dark_blue"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/height"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsDivider">
 
         <ImageView
@@ -136,7 +144,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dark_blue"
-            android:paddingEnd="8dp"
+            android:paddingEnd="16dp"
             android:src="@drawable/ic_radius"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -150,21 +158,31 @@
             android:textColor="@color/blue"
             android:textSize="12dp"
             app:layout_constraintBottom_toTopOf="@+id/radiusEditText"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/radiusImageView" />
 
         <EditText
             android:id="@+id/radiusEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/radiusImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/metersRadius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radiusEditText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -173,9 +191,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="78dp"
         android:background="@color/dark_blue"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radius"
         app:layout_constraintTop_toBottomOf="@id/specialMissionSettingsDivider">
 
         <ImageView
@@ -183,7 +201,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dark_blue"
-            android:paddingEnd="8dp"
+            android:paddingEnd="16dp"
             android:src="@drawable/ic_shooting_points_number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -193,25 +211,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dark_blue"
-            android:text="Точек съемки"
+            android:text="Точек съёмки"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/shootingPointsNumberImageView"
             app:layout_constraintBottom_toTopOf="@+id/shootingPointsNumberEditText" />
 
         <EditText
             android:id="@+id/shootingPointsNumberEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="3"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/shootingPointsNumberImageView"
             tools:ignore="SpeakableTextPresentCheck" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -230,7 +247,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dark_blue"
-            android:paddingEnd="8dp"
+            android:paddingEnd="16dp"
             android:src="@drawable/ic_height"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -243,22 +260,31 @@
             android:text="Высота"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/heightImageView"
             app:layout_constraintBottom_toTopOf="@+id/heightEditText" />
 
         <EditText
             android:id="@+id/heightEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/heightImageView"
             tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/metersHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/heightEditText"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -277,7 +303,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/dark_blue"
-            android:paddingEnd="8dp"
+            android:paddingEnd="16dp"
             android:src="@drawable/ic_title_angle"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -290,22 +316,31 @@
             android:text="Угол наклона"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tiltAngleImageView"
             app:layout_constraintBottom_toTopOf="@+id/tiltAngleEditText" />
 
         <EditText
             android:id="@+id/tiltAngleEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tiltAngleImageView"
             tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/degree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="°"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tiltAngleEditText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -317,7 +352,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:padding="8dp"
         android:text="Общие настройки"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -363,22 +397,31 @@
             android:text="Скругление"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/roundingImageView"
             app:layout_constraintBottom_toTopOf="@+id/roundingEditText" />
 
         <EditText
             android:id="@+id/roundingEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/roundingImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/metersRounding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/roundingEditText"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -411,22 +454,32 @@
             android:text="Скорость"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/speedImageView"
             app:layout_constraintBottom_toTopOf="@+id/speedEditText"/>
 
         <EditText
             android:id="@+id/speedEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/speedImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/metersSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="км/ч"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/speedEditText"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView

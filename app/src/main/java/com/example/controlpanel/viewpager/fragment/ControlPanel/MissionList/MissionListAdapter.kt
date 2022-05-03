@@ -14,7 +14,9 @@ import com.example.controlpanel.databinding.MissionItemBinding
 class MissionListAdapter: RecyclerView.Adapter<MissionListAdapter.ViewHolder>() {
 
 
-    private var missionList = mutableListOf<Any>()
+    var missionList = mutableListOf<Any>()
+    private var previousExpandedPosition = -1
+    private var mExpandedPosition = -1
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val binding = MissionItemBinding.bind(itemView)
@@ -33,25 +35,27 @@ class MissionListAdapter: RecyclerView.Adapter<MissionListAdapter.ViewHolder>() 
             holder.binding.addressView.text = currentItem.address
             holder.binding.dateTextView.text = currentItem.creationDate
         }else if (currentItem is ArealShooting){
-
             holder.binding.iconView.setImageResource(R.drawable.ic_areal_shooting)
             holder.binding.missionNameView.text = currentItem.name
             holder.binding.addressView.text = currentItem.address
             holder.binding.dateTextView.text = currentItem.creationDate
         }
 
+        //Expand function
+        val isExpanded = (position==mExpandedPosition)
+        //Expand group
+        holder.binding.popOutMenuGroup.visibility = if(isExpanded){View.VISIBLE}else{View.GONE}
         //Expand button
+        holder.binding.expandButton.setImageResource( if (isExpanded){ R.drawable.ic_expand_open }else{ R.drawable.ic_expand_closed })
+        if (isExpanded) previousExpandedPosition = position
+
         holder.binding.expandButton.setOnClickListener{
-            if (holder.binding.popOutMenu.visibility == View.GONE){
-                holder.binding.popOutMenu.visibility = View.VISIBLE
-                holder.binding.missionDivider.visibility = View.VISIBLE
-                holder.binding.expandButton.setImageResource(R.drawable.ic_expand_open)
-            }else{
-                holder.binding.popOutMenu.visibility = View.GONE
-                holder.binding.missionDivider.visibility = View.GONE
-                holder.binding.expandButton.setImageResource(R.drawable.ic_expand_closed)
-            }
+            if ( isExpanded){ mExpandedPosition = -1 }else{ mExpandedPosition = position }
+            notifyItemChanged(previousExpandedPosition)
+            notifyItemChanged(position)
         }
+
+
 
         //Edit button
         holder.binding.editButton.setOnClickListener{
@@ -80,7 +84,6 @@ class MissionListAdapter: RecyclerView.Adapter<MissionListAdapter.ViewHolder>() 
 
             override fun onStopTrackingTouch(p0: SeekBar?) {
             }
-
         })
     }
 
@@ -92,5 +95,4 @@ class MissionListAdapter: RecyclerView.Adapter<MissionListAdapter.ViewHolder>() 
         this.missionList.addAll(mission)
         notifyDataSetChanged()
     }
-
 }

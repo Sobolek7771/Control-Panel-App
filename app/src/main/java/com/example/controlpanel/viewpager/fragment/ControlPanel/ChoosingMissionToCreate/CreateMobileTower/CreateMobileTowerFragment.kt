@@ -57,6 +57,7 @@ class CreateMobileTowerFragment : Fragment() {
             //Create MobileTower
             val mobileTower = MobileTower(0,
                 "MobileTower",
+                true,
                 Integer.parseInt(speed.toString()),
                 Integer.parseInt(rounding.toString()),
                 Integer.parseInt(radius.toString()),

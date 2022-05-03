@@ -12,13 +12,19 @@ import kotlinx.coroutines.launch
 
 class ArealShootingViewModel(application: Application): AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<ArealShooting>>
+    val readAllLocalData: LiveData<List<ArealShooting>>
+    val countAllLocalData: LiveData<Int>
+    val readAllServerData: LiveData<List<ArealShooting>>
+    val countAllServerData: LiveData<Int>
     private val repository: ArealShootingRepository
 
     init {
         val arealShootingDao = MissionDatabase.getDatabase(application).ArealShootingDao()
         repository = ArealShootingRepository(arealShootingDao)
-        readAllData = repository.readAllData
+        readAllLocalData = repository.readAllLocalData
+        countAllLocalData = repository.countAllLocalData
+        readAllServerData = repository.readAllServerData
+        countAllServerData = repository.countAllServerData
     }
 
     fun addArealShooting(arealShooting: ArealShooting){

@@ -16,7 +16,15 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -39,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="Создание  миссии"
                 android:textColor="@color/white"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/backButton"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -61,7 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:padding="8dp"
+        android:layout_marginTop="16dp"
         android:text="Площадная съемка"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -72,7 +80,8 @@
         android:id="@+id/imageView"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/ic_areal_shooting"
         app:layout_constraintStart_toEndOf="@+id/helpTextView"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
@@ -102,7 +111,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:padding="8dp"
         android:text="Настройки миссии"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -120,17 +128,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsTextView" />
 
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/resolution"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/dark_blue"
-            app:layout_constraintEnd_toEndOf="@+id/longitudinalOverlap"
-            app:layout_constraintTop_toBottomOf="@+id/specialMissionSettingsDivider">
+        android:id="@+id/resolution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintEnd_toEndOf="@+id/longitudinalOverlap"
+        app:layout_constraintTop_toTopOf="@+id/height">
 
         <ImageView
             android:id="@+id/resolutionImageView"
@@ -143,28 +148,26 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/resolutionTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Разрешение"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/resolutionImageView"
-                app:layout_constraintBottom_toTopOf="@id/resolutionEditText" />
+        <TextView
+            android:id="@+id/resolutionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:text="Разрешение"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/resolutionImageView"
+            app:layout_constraintBottom_toTopOf="@id/resolutionEditText" />
 
         <EditText
             android:id="@+id/resolutionEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="3"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toTopOf="@id/resolutionHint"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/resolutionImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
@@ -179,7 +182,7 @@
             app:layout_constraintStart_toEndOf="@+id/resolutionImageView"
             app:layout_constraintBottom_toBottomOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/chain1"
@@ -190,97 +193,119 @@
         app:layout_constraintBottom_toBottomOf="@+id/height"
         android:layout_marginLeft="16dp"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/height"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintStart_toEndOf="@id/chain1"
+        app:layout_constraintTop_toBottomOf="@id/specialMissionSettingsDivider">
+
+        <ImageView
+            android:id="@+id/heightImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
             android:background="@color/dark_blue"
-            app:layout_constraintStart_toEndOf="@id/chain1"
-            app:layout_constraintBottom_toBottomOf="@id/resolution">
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_height"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/heightImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:paddingEnd="8dp"
-                android:src="@drawable/ic_height"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/heightTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Высота"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/heightImageView"
-                app:layout_constraintBottom_toTopOf="@id/heightEditText" />
-
-            <EditText
-                android:id="@+id/heightEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/parameter_input"
-                android:ems="10"
-                android:inputType="number"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/heightImageView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/longitudinalOverlap"
+        <TextView
+            android:id="@+id/heightTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:background="@color/dark_blue"
+            android:text="Высота"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/heightImageView"
+            app:layout_constraintBottom_toTopOf="@id/heightEditText" />
+
+        <EditText
+            android:id="@+id/heightEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:ems="2"
+            android:inputType="number"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/heightImageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/metersHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/heightEditText"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/longitudinalOverlap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resolution">
+
+        <ImageView
+            android:id="@+id/longitudinalOverlapImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_longitudinal_overlap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/resolution">
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-            <ImageView
-                android:id="@+id/longitudinalOverlapImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:paddingEnd="8dp"
-                android:src="@drawable/ic_longitudinal_overlap"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/longitudinalOverlapTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:text="Продольное\nперекрытие"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/longitudinalOverlapImageView"
+            app:layout_constraintBottom_toTopOf="@id/longitudinalOverlapEditText" />
 
-            <TextView
-                android:id="@+id/longitudinalOverlapTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Продольное \n перекрытие"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/longitudinalOverlapImageView"
-                app:layout_constraintBottom_toTopOf="@id/longitudinalOverlapEditText" />
+        <EditText
+            android:id="@+id/longitudinalOverlapEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:ems="2"
+            android:inputType="number"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/longitudinalOverlapImageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <EditText
-                android:id="@+id/longitudinalOverlapEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/parameter_input"
-                android:ems="10"
-                android:inputType="number"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/longitudinalOverlapImageView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/percentLongitudinalOverlap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/longitudinalOverlapEditText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/chain2"
@@ -288,101 +313,122 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_chained"
         app:layout_constraintStart_toEndOf="@+id/longitudinalOverlap"
-        app:layout_constraintBottom_toBottomOf="@+id/longitudinalOverlap"
+        app:layout_constraintTop_toTopOf="@+id/longitudinalOverlap"
         android:layout_marginLeft="16dp"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/shootingStep"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/shootingStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintStart_toEndOf="@+id/chain2"
+        app:layout_constraintBottom_toBottomOf="@id/longitudinalOverlap">
+
+        <ImageView
+            android:id="@+id/shootingStepImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
             android:background="@color/dark_blue"
-            app:layout_constraintStart_toEndOf="@+id/chain2"
-            app:layout_constraintBottom_toBottomOf="@id/longitudinalOverlap">
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_shooting_step"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/shootingStepImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:paddingEnd="8dp"
-                android:src="@drawable/ic_shooting_step"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/shootingStepTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Шаг съемки"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shootingStepImageView"
-                app:layout_constraintBottom_toTopOf="@id/shootingStepEditText" />
-
-            <EditText
-                android:id="@+id/shootingStepEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/parameter_input"
-                android:ems="10"
-                android:inputType="number"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shootingStepImageView"
-                tools:ignore="SpeakableTextPresentCheck" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/transverseOverlap"
+        <TextView
+            android:id="@+id/shootingStepTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:background="@color/dark_blue"
-            app:layout_constraintEnd_toEndOf="@+id/longitudinalOverlap"
-            app:layout_constraintTop_toBottomOf="@id/longitudinalOverlap">
+            android:text="Шаг съёмки"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shootingStepImageView"
+            app:layout_constraintBottom_toTopOf="@id/shootingStepEditText" />
 
-            <ImageView
-                android:id="@+id/transverseOverlapImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:paddingEnd="8dp"
-                android:src="@drawable/ic_transverse_overlap"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+        <EditText
+            android:id="@+id/shootingStepEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:ems="2"
+            android:inputType="number"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shootingStepImageView"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <TextView
-                android:id="@+id/transverseOverlapTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Поперечное \n перекрытие"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/transverseOverlapImageView"
-                app:layout_constraintBottom_toTopOf="@+id/transverseOverlapEditText"/>
+        <TextView
+            android:id="@+id/metersShootingStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shootingStepEditText"/>
 
-            <EditText
-                android:id="@+id/transverseOverlapEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/parameter_input"
-                android:ems="10"
-                android:inputType="number"
-                android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/transverseOverlapImageView"
-                app:layout_constraintBottom_toBottomOf="parent"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/transverseOverlap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintEnd_toEndOf="@+id/longitudinalOverlap"
+        app:layout_constraintTop_toBottomOf="@id/longitudinalOverlap">
+
+        <ImageView
+            android:id="@+id/transverseOverlapImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_transverse_overlap"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/transverseOverlapTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:text="Поперечное\nперекрытие"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/transverseOverlapImageView"
+            app:layout_constraintBottom_toTopOf="@+id/transverseOverlapEditText"/>
+
+        <EditText
+            android:id="@+id/transverseOverlapEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:ems="2"
+            android:inputType="number"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/transverseOverlapImageView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="SpeakableTextPresentCheck"/>
+
+        <TextView
+            android:id="@+id/percentTransverseOverlap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="%"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/transverseOverlapEditText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/chain3"
@@ -390,55 +436,65 @@
         android:layout_height="wrap_content"
         android:src="@drawable/ic_chained"
         app:layout_constraintStart_toEndOf="@+id/transverseOverlap"
-        app:layout_constraintBottom_toBottomOf="@+id/transverseOverlap"
+        app:layout_constraintTop_toTopOf="@+id/transverseOverlap"
         android:layout_marginLeft="16dp"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/tackStep"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tackStep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintStart_toEndOf="@+id/chain3"
+        app:layout_constraintBottom_toBottomOf="@id/transverseOverlap">
+
+        <ImageView
+            android:id="@+id/tackStepImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:background="@color/dark_blue"
-            app:layout_constraintStart_toEndOf="@+id/chain3"
-            app:layout_constraintBottom_toBottomOf="@id/transverseOverlap">
+            android:paddingEnd="16dp"
+            android:src="@drawable/ic_tack_step"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageView
-                android:id="@+id/tackStepImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:paddingEnd="8dp"
-                android:src="@drawable/ic_tack_step"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/tackStepTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_blue"
+            android:text="Шаг галсов"
+            android:textColor="@color/blue"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tackStepImageView"
+            app:layout_constraintBottom_toTopOf="@+id/tackStepEditText" />
 
-            <TextView
-                android:id="@+id/tackStepTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/dark_blue"
-                android:text="Шаг галсов"
-                android:textColor="@color/blue"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tackStepImageView"
-                app:layout_constraintBottom_toTopOf="@+id/tackStepEditText" />
+        <EditText
+            android:id="@+id/tackStepEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:ems="2"
+            android:inputType="number"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tackStepImageView"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <EditText
-                android:id="@+id/tackStepEditText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/parameter_input"
-                android:ems="10"
-                android:inputType="number"
-                android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tackStepImageView"
-                tools:ignore="SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/meterЫtackStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tackStepEditText"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/generalMissionSettingsTextView"
@@ -446,7 +502,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:padding="8dp"
         android:text="Общие настройки"
         android:textColor="@color/grey"
         android:textSize="14dp"
@@ -468,10 +523,9 @@
         android:id="@+id/rounding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:background="@color/dark_blue"
-        app:layout_constraintStart_toStartOf="@+id/tackStep"
+        app:layout_constraintStart_toStartOf="@id/tackStep"
         app:layout_constraintBottom_toBottomOf="@+id/speed">
 
         <ImageView
@@ -492,22 +546,31 @@
             android:text="Скругление"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/roundingImageView"
             app:layout_constraintBottom_toTopOf="@+id/roundingEditText" />
 
         <EditText
             android:id="@+id/roundingEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/roundingImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        <TextView
+            android:id="@+id/metersRounding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:text="м"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            android:padding="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/roundingEditText"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -540,22 +603,32 @@
             android:text="Скорость"
             android:textColor="@color/blue"
             android:textSize="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/speedImageView"
-            app:layout_constraintBottom_toTopOf="@+id/speedEditText"/>
+            app:layout_constraintBottom_toTopOf="@+id/speedEditText"
+            app:layout_constraintStart_toEndOf="@+id/speedImageView" />
 
         <EditText
             android:id="@+id/speedEditText"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/parameter_input"
-            android:ems="10"
+            android:ems="2"
             android:inputType="number"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/speedImageView"
             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/metersSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/parameter_input"
+            android:padding="2dp"
+            android:text="км/ч"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/speedEditText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.cardview.widget.CardView

@@ -12,13 +12,19 @@ import kotlinx.coroutines.launch
 
 class MobileTowerViewModel(application: Application): AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<MobileTower>>
+    val readAllLocalData: LiveData<List<MobileTower>>
+    val countAllLocalData: LiveData<Int>
+    val readAllServerData: LiveData<List<MobileTower>>
+    val countAllServerData: LiveData<Int>
     private val repository: MobileTowerRepository
 
     init {
         val mobileTowerDao = MissionDatabase.getDatabase(application).MobileTowerDao()
         repository = MobileTowerRepository(mobileTowerDao)
-        readAllData = repository.readAllData
+        readAllLocalData = repository.readAllLocalData
+        countAllLocalData = repository.countAllLocalData
+        readAllServerData = repository.readAllServerData
+        countAllServerData = repository.countAllServerData
     }
 
     fun addMobileTower(mobileTower: MobileTower){

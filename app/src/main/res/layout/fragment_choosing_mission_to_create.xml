@@ -17,7 +17,15 @@
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:contentInsetRight="0dp"
+        android:contentInsetEnd="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
@@ -65,7 +73,7 @@
         android:textColor="@color/grey"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        android:padding="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
 
     <androidx.cardview.widget.CardView
@@ -89,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/very_dark_blue_button_background"
-                android:drawableTop="@drawable/ic_mobile_tower"
+                android:drawableTop="@drawable/ic_big_mobile_tower"
                 android:text="мобильная\nвышка"
                 android:textColor="@color/grey"
                 android:textAllCaps="false"
@@ -109,7 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/very_dark_blue_button_background"
-                android:drawableTop="@drawable/ic_free_flight"
+                android:drawableTop="@drawable/ic_big_free_flight"
                 android:text="свободный\nполет"
                 android:textColor="@color/grey"
                 android:textAllCaps="false"
@@ -128,12 +136,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/very_dark_blue_button_background"
-                android:drawableTop="@drawable/ic_areal_shooting"
+                android:drawableTop="@drawable/ic_big_areal_shooting"
+                android:padding="16dp"
                 android:text="площадная\nсъемка"
-                android:textColor="@color/grey"
                 android:textAllCaps="false"
-                android:textSize="12dp"
-                android:padding="16dp"/>
+                android:textColor="@color/grey"
+                android:textSize="12dp" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

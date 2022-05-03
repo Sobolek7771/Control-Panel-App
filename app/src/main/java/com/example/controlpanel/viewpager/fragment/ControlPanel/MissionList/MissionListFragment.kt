@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,7 +22,6 @@ class MissionListFragment : Fragment() {
 
     private lateinit var mMobileTowerViewModel: MobileTowerViewModel
     private lateinit var mArealShootingViewModel: ArealShootingViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -32,22 +33,34 @@ class MissionListFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentMissionListControlPanelBinding.inflate(inflater, container, false)
 
-        //RecyclerView
-        val adapter = MissionListAdapter()
-        val recyclerView = binding.recyclerview
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
+        val localAdapter = MissionListAdapter()
+        //LocalRecyclerView
+        val localRecyclerView = binding.localRecyclerView
+        localRecyclerView.adapter = localAdapter
+        localRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         //MobileTowerViewMode
         mMobileTowerViewModel = ViewModelProvider(this).get(MobileTowerViewModel::class.java)
-        mMobileTowerViewModel.readAllData.observe(viewLifecycleOwner, Observer { mobileTower->
-            adapter.setData(mobileTower)
+        mMobileTowerViewModel.readAllLocalData.observe(viewLifecycleOwner, Observer { mobileTower->
+            localAdapter.setData(mobileTower)
         })
-
         //ArealShootingViewMode
         mArealShootingViewModel = ViewModelProvider(this).get(ArealShootingViewModel::class.java)
-        mArealShootingViewModel.readAllData.observe(viewLifecycleOwner, Observer { arealShooting->
-            adapter.setData(arealShooting)
+        mArealShootingViewModel.readAllLocalData.observe(viewLifecycleOwner, Observer { arealShooting->
+            localAdapter.setData(arealShooting)
+        })
+
+        val serverAdapter = MissionListAdapter()
+        //ServerRecyclerView
+        val serverRecyclerView = binding.serverRecyclerView
+        serverRecyclerView.adapter = serverAdapter
+        serverRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        //MobileTowerViewMode
+        mMobileTowerViewModel.readAllServerData.observe(viewLifecycleOwner, Observer { mobileTower->
+            serverAdapter.setData(mobileTower)
+        })
+        //ArealShootingViewModel
+        mArealShootingViewModel.readAllServerData.observe(viewLifecycleOwner, Observer { arealShooting->
+            serverAdapter.setData(arealShooting)
         })
 
         //Add button
@@ -64,8 +77,8 @@ class MissionListFragment : Fragment() {
                 binding.searchButton.setBackgroundResource(R.drawable.submenu_normal)
             }
         }
-
         return binding.root
     }
 }
+
 

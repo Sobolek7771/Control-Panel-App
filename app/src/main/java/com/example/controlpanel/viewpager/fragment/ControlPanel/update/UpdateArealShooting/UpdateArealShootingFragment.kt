@@ -75,6 +75,7 @@ class UpdateArealShootingFragment : Fragment() {
             //Create ArealShooting
             val arealShooting = ArealShooting(args.currentArealShooting.id,
                 "ArealShooting",
+                args.currentArealShooting.isLocal,
                 Integer.parseInt(speed.toString()),
                 Integer.parseInt(rounding.toString()),
                 Integer.parseInt(resolution.toString()),
